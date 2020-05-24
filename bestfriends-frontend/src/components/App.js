@@ -1,11 +1,21 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-function App() {
+import './App.scss';
+
+
+import Welcome from './Welcome';
+import Layout from './Layout';
+
+function App(props) {
   return (
-    <div className="app">
-      <h2>BestFriends</h2>
-    </div>
+    <Layout>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Welcome} />
+        </Switch>
+      </Router>
+    </Layout>
   );
 }
 
